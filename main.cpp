@@ -305,7 +305,7 @@ int main()
     }
     else
     {
-        std::cout << "Nope.\n";
+        std::cout << "GRAPHCHOICE not implemented - check setting in main.cpp\n";
             return 1;
     }
 
@@ -774,36 +774,40 @@ int main()
 
     if (OPERATIONMODE == 0){
 
-    int maxGenus, minGenus;
-    maxGenus = minGenus = 0;
+        int maxGenus, minGenus;
+        maxGenus = minGenus = 0;
 
-    for (int i = 0; i < numArrays; i++)
-    {
-        if (pSystemGenus[i] > maxGenus)
-            maxGenus = pSystemGenus[i];
-        if (pSystemGenus[i] < minGenus)
-            minGenus = pSystemGenus[i];
-    }
+        for (int i = 0; i < numArrays; i++)
+        {
+            if (pSystemGenus[i] > maxGenus)
+                maxGenus = pSystemGenus[i];
+            if (pSystemGenus[i] < minGenus)
+                minGenus = pSystemGenus[i];
+        }
 
-    int surfaceGenusCounts[maxGenus - minGenus + 1];
+        int surfaceGenusCounts[maxGenus - minGenus + 1];
 
-    for (int i = 0; i < maxGenus - minGenus + 1; i++)
-        surfaceGenusCounts[i] = 0;
+        for (int i = 0; i < maxGenus - minGenus + 1; i++)
+            surfaceGenusCounts[i] = 0;
 
-    for (int i = 0; i < numArrays; i++)
-        for (int j = 0; j < maxGenus - minGenus + 1; j++)
-            if (pSystemGenus[i] == minGenus + j)
-                surfaceGenusCounts[j]++;
+        for (int i = 0; i < numArrays; i++)
+            for (int j = 0; j < maxGenus - minGenus + 1; j++)
+                if (pSystemGenus[i] == minGenus + j)
+                    surfaceGenusCounts[j]++;
 
-    for (int i = 0; i < maxGenus - minGenus + 1; i++)
-        std::cout << "Genus " << minGenus + i << ": " << surfaceGenusCounts[i]
-        << "  -----  " << double(surfaceGenusCounts[i])/double(numArrays) << std::endl;
+        for (int i = 0; i < maxGenus - minGenus + 1; i++)
+            std::cout << "Genus " << minGenus + i << ": " << surfaceGenusCounts[i]
+            << "  -----  " << double(surfaceGenusCounts[i])/double(numArrays) << std::endl;
 
-    std::cout << "\nNumber of flip-inequivalent decompositions:\n";
-    for (int i = 0; i < maxGenus - minGenus + 1; i++)
-        std::cout << "Genus " << minGenus + i << ": " << surfaceGenusCounts[i]/2
-        << "  -----  " << (double(surfaceGenusCounts[i])/double(numArrays)) << std::endl;
+        std::cout << "\nNumber of flip-inequivalent decompositions:\n";
+        for (int i = 0; i < maxGenus - minGenus + 1; i++)
+            std::cout << "Genus " << minGenus + i << ": " << surfaceGenusCounts[i]/2
+            << "  -----  " << (double(surfaceGenusCounts[i])/double(numArrays)) << std::endl;
 
+        std::string inp;
+        std::cout << "\nPress any key to exit" << std::endl;
+        std::cin >> inp;
+        return 0;
 
     } /// End of OPMODE == 0
 
@@ -821,9 +825,20 @@ int main()
                 std::cout << "Genus " << i << ": " << pGenusCounts[i]/2
                 << "  -----  " << (double(pGenusCounts[i])/double(numArrays)) << std::endl;
 
+        std::string inp;
+        std::cout << "\nPress any key to exit" << std::endl;
+        std::cin >> inp;
+        return 0;
 
     } /// End of OPMODE == 1
 
-    else {std::cout << "Bad OPERATIONMODE.\n"; return 1;}
+    else {
+        std::cout << "Bad OPERATIONMODE.\n"; 
+
+        std::string inp;
+        std::cout << "\nPress any key to exit" << std::endl;
+        std::cin >> inp;
+        return 1;
+    }
 
 }
