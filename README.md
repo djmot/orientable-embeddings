@@ -1,6 +1,6 @@
 # orientable-embeddings
 
-![table of counts by surface genus](docs/thesistable.PNG)
+![table of counts by surface genus](docs/thesistable.png)
 
 ## A C++ program to compute orientable embeddings of Cayley graphs
 
