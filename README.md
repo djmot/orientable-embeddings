@@ -6,7 +6,7 @@
 
 This program implements an algorithm to compute the [surface embeddings](https://en.wikipedia.org/wiki/Graph_embedding) of a given [Cayley graph](https://en.wikipedia.org/wiki/Cayley_graph).
 
-To reduce computation, only embeddings in orientable surfaces are considered. The program counts the number of embeddings of the graph in each orientable surface of genus *K*.
+To reduce computation, only embeddings in orientable surfaces are considered. The program counts the number of embeddings of the graph in each [orientable surface of genus *K*](https://en.wikipedia.org/wiki/Orientability#Orientable_surfaces).
 
 
 ## How to build
