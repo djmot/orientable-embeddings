@@ -11,7 +11,9 @@ To reduce computation, only embeddings in orientable surfaces are considered. Th
 
 ## How to build
 
-To rebuild "main.exe", you need to compile "main.cpp". If you're using [mingw-w64](http://mingw-w64.org/doku.php) on Windows, with the g++ compiler, just enter:
+To rebuild "main.exe", you need to compile "main.cpp". 
+
+For example: if you're using [mingw-w64](http://mingw-w64.org/doku.php) on Windows, with the g++ compiler, run:
 
 ```g++ -g main.cpp -o main.exe```
 
